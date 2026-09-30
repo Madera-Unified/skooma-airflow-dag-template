@@ -24,9 +24,9 @@ DAG_README = (Path(__file__).parent / "README.md").read_text(encoding="utf-8")
         "retry_delay": duration(minutes=5),
     },
     doc_md=DAG_README,
-    on_failure_callback=[SmtpNotifier(to="user@example.com")],
+    on_failure_callback=[SmtpNotifier(to="it-database-devs@maderausd.org")],
 )
-def DAG_RENAME_ME():
+def {{.DagName}}():
     @task
     def TASK_RENAME_ME():
         logging.info("Running TASK_RENAME_ME...")
@@ -34,4 +34,4 @@ def DAG_RENAME_ME():
     TASK_RENAME_ME()
 
 
-DAG_RENAME_ME()
+{{.DagName}}()
