@@ -24,7 +24,7 @@ DAG_README = (Path(__file__).parent / "README.md").read_text(encoding="utf-8")
         "retry_delay": duration(minutes=5),
     },
     doc_md=DAG_README,
-    on_failure_callback=[SmtpNotifier(to="it-database-devs@maderausd.org")],
+    on_failure_callback=[SmtpNotifier(to="_it-database-devs@maderausd.org")],
 )
 def {{.DagName}}():
     @task

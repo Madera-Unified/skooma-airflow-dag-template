@@ -9,7 +9,6 @@
       "description": "Enter the name of your Apache Airflow DAG",
       "type": "text",
       "required": true,
-      "default": "my_dag",
       "validators": [
         "not_empty"
       ]
@@ -20,7 +19,6 @@
       "description": "Enter the name of the owner of your Apache Airflow DAG",
       "type": "text",
       "required": true,
-      "default": "Mark Rodgers",
       "validators": [
         "not_empty"
       ]
