@@ -1,0 +1,37 @@
+import logging
+from pathlib import Path
+
+from airflow.providers.smtp.notifications.smtp import SmtpNotifier
+from airflow.sdk import dag, task
+from pendulum import datetime, duration
+
+DAG_README = (Path(__file__).parent / "README.md").read_text(encoding="utf-8")
+
+
+@dag(
+    dag_display_name="{{.Name}}",
+    description="{{.Description}}",
+    tags=["DEPT-IT"],
+    start_date=datetime(2025, 6, 30, 6, 0, tz="America/Los_Angeles"),
+    # schedule="0 0 * * *", # Runs daily at midnight
+    catchup=False,
+    # params={
+    #     "UseAeriesSandbox": False,
+    # },
+    default_args={
+        "owner": "{{.Author}}",
+        "retries": 0,
+        "retry_delay": duration(minutes=5),
+    },
+    doc_md=DAG_README,
+    on_failure_callback=[SmtpNotifier(to="user@example.com")],
+)
+def DAG_RENAME_ME():
+    @task
+    def TASK_RENAME_ME():
+        logging.info("Running TASK_RENAME_ME...")
+
+    TASK_RENAME_ME()
+
+
+DAG_RENAME_ME()

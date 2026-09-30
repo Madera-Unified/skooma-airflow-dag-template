@@ -1,0 +1,6 @@
+{
+  "name": "Apache Airflow DAG Template",
+  "description": "A template for creating Apache Airflow DAGs",
+  "author": "Mark Rodgers <mark@marknrodgers.com>",
+  "variables": []
+}
