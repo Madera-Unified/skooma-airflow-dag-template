@@ -13,6 +13,17 @@
       "validators": [
         "not_empty"
       ]
+    },
+    {
+      "name": "OwnerName",
+      "prompt": "Owner name",
+      "description": "Enter the name of the owner of your Apache Airflow DAG",
+      "type": "text",
+      "required": true,
+      "default": "Mark Rodgers",
+      "validators": [
+        "not_empty"
+      ]
     }
   ]
 }

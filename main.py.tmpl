@@ -19,7 +19,7 @@ DAG_README = (Path(__file__).parent / "README.md").read_text(encoding="utf-8")
     #     "UseAeriesSandbox": False,
     # },
     default_args={
-        "owner": "{{.Author}}",
+        "owner": "{{.OwnerName}}",
         "retries": 0,
         "retry_delay": duration(minutes=5),
     },
